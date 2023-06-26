@@ -1,0 +1,13 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.dropdown .Select-control {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.dropdown .Select-menu-outer {
+    width: 50%; 
+    left: 25%;  /* Adjust this to align with the dropdown bar */
+}
