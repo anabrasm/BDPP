@@ -9,6 +9,7 @@ pandas = "*"
 requests = "*"
 feather-format = "*"
 pycountry = "*"
+dash-bootstrap-components = "*"
 
 [dev-packages]
 
