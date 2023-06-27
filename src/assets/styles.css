@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
 }
+
+h1 {
+    font-weight: 700;
+}
+
 
 .dropdown .Select-control {
     width: 50%;
@@ -34,4 +39,15 @@ p {
 
 h1, h5 {
     text-align: left;
+}
+
+.footer-column {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-heading {
+    margin: 0;
+    padding: 0;
 }
