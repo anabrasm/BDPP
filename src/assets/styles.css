@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Montserrat';
 }
 
 .dropdown .Select-control {
@@ -10,4 +12,26 @@ body {
 .dropdown .Select-menu-outer {
     width: 50%; 
     left: 25%;  /* Adjust this to align with the dropdown bar */
+}
+  
+header {
+    background-color: #D4E3DA;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+main, header h1, header h5, footer {
+    max-width: 1920px;
+    margin: auto;
+}
+
+p {
+    padding: 0px;
+}
+
+h1, h5 {
+    text-align: left;
 }
