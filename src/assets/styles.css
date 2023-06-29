@@ -8,6 +8,9 @@ h1 {
     font-weight: 700;
 }
 
+.dropdown {
+    padding: 10px;
+}
 
 .dropdown .Select-control {
     width: 50%;
@@ -33,6 +36,7 @@ main {
 
 main, header h1, header h5, footer {
     max-width: 1920px;
+    width: 90vw;
     margin: auto;
 }
 
