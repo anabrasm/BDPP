@@ -42,12 +42,26 @@ h1, h5 {
 }
 
 .footer-column {
-    width: 50%;
+    width: 48%;  /* Adjust this value as needed */
     display: inline-block;
     vertical-align: top;
+    margin-right: 20px;  /* Change this to adjust the spacing */
 }
 
 .footer-heading {
     margin: 0;
-    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-text{
+    padding: 0px;
+}
+
+.small-font {
+    font-size: 0.7em;
+}
+
+.main-text{
+    padding: 0px;
 }
