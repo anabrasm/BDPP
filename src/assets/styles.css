@@ -81,3 +81,30 @@ h1, h5 {
 #country-holder, #dummy-button {
     display: none;
 }
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-dialog {
+    max-width: 40%; 
+}
+
+.rc-slider-track {
+    background-color: #D4E3DA;
+}
+
+.rc-slider-handle {
+    border-color: #8FAF97;
+    background-color: #8FAF97;
+}
+
+.rc-slider-dot {
+    border-color: #D4E3DA;
+    background-color: #D4E3DA;
+}
+
+.rc-slider-dot-active {
+    border-color: #8FAF97;
+    background-color: #8FAF97;
+}
