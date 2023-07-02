@@ -72,3 +72,12 @@ h1, h5 {
 .main-text{
     padding: 0px;
 }
+
+#world-map {
+    height: 800px;
+    width: 100%;
+}
+
+#country-holder, #dummy-button {
+    display: none;
+}
