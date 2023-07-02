@@ -5,6 +5,15 @@ You can view this app here: [green-energy-innovation.fly.dev](https://green-ener
 
 ## Run Locally
 
+1. Ensure the project dependencies are installed
+   -  pipenv 
+   -  make
+2. Run the project:
+
+   ```
+   make
+   ```
+   
 
 
 ## Deployment
