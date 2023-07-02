@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for green-energy-innovation on 2023-07-02T12:38:15+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "green-energy-innovation"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8050"
+  HOST = "0.0.0.0"
+
+[http_service]
+  internal_port = 8050
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
