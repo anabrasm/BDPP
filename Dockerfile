@@ -11,4 +11,4 @@ RUN pipenv sync
 
 ADD . /usr/src/
 
-CMD ["pipenv", "run", "python", "src/2_creating_map.py"]
+CMD ["pipenv", "run", "python", "src/run_app.py"]

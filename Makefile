@@ -3,11 +3,11 @@
 dependencies:
 	pipenv sync
 
-prepare: dependencies
-	pipenv run python src/1_prepare_data.py
+clean: dependencies
+	pipenv run python src/clean_data.py
 
-run: dependencies prepare
-	pipenv run python src/2_creating_map.py
+process: dependencies clean
+	pipenv run python src/process_data.py
 
-convert: 
-	jupyter nbconvert --to python src/*.ipynb 
+run: dependencies process 
+	pipenv run python src/run_app.py
