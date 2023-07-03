@@ -52,12 +52,13 @@ color_scale_ff = [
     (1.0, "rgb(20,10,5)"),  # Dark brown for all values above 150
 ]
 
-
+# Initialize the app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+# App layout, defined in the script app_layout.py
 app.layout = init_layout(df)
 
 # Defining energy types and their respective color scales
-
 def get_color_scale(energy_type):
     if energy_type == "ff":
         return color_scale_ff
@@ -100,20 +101,24 @@ def get_country_trend_fig(dff, energy_type, energy_label):
     
     return fig
 
-# Callbacks
 
 @app.callback(
     Output("dummy-button", "n_clicks"),
     Input("world-map", "clickData"),
 )
+
+# Responsible for updating the number of clicks on the dummy button whenever the world map is clicked
 def update_dummy_button(clickData):
     return 1 if clickData else 0
 
 @app.callback(
     Output("world-map", "figure"),
     [Input("type-selection", "value"), Input("year-slider", "value")],
-)
-def update_world_map(energy_type, selected_year):
+) 
+
+# Updates the world map figure whenever energy type selection or the year of the slider changes 
+# It filters the dataframe based on the selected year and determines color scale based on energy type
+def update_world_map(energy_type, selected_year): 
     dff = df[df["Year"] == selected_year]
     color_scale = get_color_scale(energy_type)
     label = get_energy_label(energy_type)
@@ -138,10 +143,14 @@ def update_world_map(energy_type, selected_year):
 
     return fig
 
+
+
 @app.callback(
     Output("country-holder", "children"),
     [Input("world-map", "clickData")],
 )
+
+# Updates the country holder whenever the world map is clicked
 def update_country_holder(clickData):
     if clickData is None:
         return dash.no_update
@@ -152,6 +161,8 @@ def update_country_holder(clickData):
     [Input("country-holder", "children"), Input("type-selection", "value"), Input('world-map', 'clickData')],
     [State("modal", "is_open")]
 )
+
+# It checks if the callback trigger is the world map or the energy type selection
 def check_source(country_code, energy_type, clickData, is_open):
     ctx = dash.callback_context
     if not ctx.triggered:
@@ -168,6 +179,8 @@ def check_source(country_code, energy_type, clickData, is_open):
         else:
             return dash.no_update
 
+
+# It updates the country trend plot and the modal header whenever the world map is clicked
 def update_country_trend(country_code, energy_type, is_open):
     if country_code is None:
         return is_open, go.Figure(), "Country Trends"
@@ -185,8 +198,8 @@ def update_country_trend(country_code, energy_type, is_open):
     
     return (not is_open), fig, "Time Trend of {} for {}".format(energy_label, country_name)
 
-# Run the app
 
+# Run the app
 if __name__ == "__main__":
     port = os.getenv("PORT", 8050)
     host = os.getenv("HOST", "localhost")
