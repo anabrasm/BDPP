@@ -30,7 +30,7 @@ This web app is a visualizing tool that documents different trends regarding cle
    ```
    make
    ```
-   
+3. Access the project locally through http://localhost:8050/  
 
 
 ## Deployment
